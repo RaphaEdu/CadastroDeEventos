@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroDeEventos.Views.CriaçãoDeEvento"
+             Title="CriaçãoDeEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+
+        <Label Text="Dados do Evento"
+               FontFamily="OdibeeSans"
+               FontSize="50"
+               TextColor="Purple"/>
+
+        <Frame Padding="10"
+               BackgroundColor="Purple">
+            <VerticalStackLayout>
+
+                <Frame Padding="10"
+                       Margin="10">
+                   <Grid RowDefinitions="Auto, Auto"
+                         ColumnDefinitions="*, *, 2*">
+
+                      <Label Grid.Row="0"
+                             Grid.Column="0"
+                             Text="Participantes:"/>
+
+                      <Label Grid.Row="0"
+                             Grid.Column="1"
+                             Text="{Binding Value}"
+                             BindingContext="{x:Reference stp_part}"/>
+
+                      <Stepper Grid.Row="0"
+                               Grid.Column="2"
+                               x:Name="stp_part"
+                               Minimum="0"
+                               Maximum="50"
+                               Increment="1"
+                               BackgroundColor="Black"/>
+
+                   </Grid>
+                </Frame>
+
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout>
+
+                     <Label Text="Local do evento:"/>
+
+                     <Picker x:Name="pck_local"
+                             Title="Escolha o local do evento"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout> 
+                        
+                        <Label Text="Duração do evento"/>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Inicio:"/>
+                            <DatePicker x:Name="dtpck_inicio"
+                                        Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Término:"/>
+                            <DatePicker x:Name="dtpck_termino"
+                                        Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                    
+                </Frame>
+
+                <Button Text="Avançar"
+                        Margin="10"
+                        BackgroundColor="Black"
+                        TextColor="White"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+    
+    
+    
+</ContentPage>
