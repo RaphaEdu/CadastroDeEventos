@@ -2,11 +2,83 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CadastroDeEventos.Views.EventoPronto"
-             Title="EventoPronto">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+        <Label Text="Nome do Evento"
+               TextColor="Purple"
+               FontFamily="OdibeeSans"
+               FontSize="45"
+               HorizontalTextAlignment="Center"/>
+
+        <Frame Margin="10"
+               BackgroundColor="Purple">
+            <VerticalStackLayout>
+
+                <!--Nome do evento-->
+                <Frame Margin="10">
+                    <HorizontalStackLayout>
+
+                        <Label Text="Numero de participantes:"/>
+                        <Label Text="10"/>
+
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!--Local do evento-->
+                <Frame Margin="10">
+                    <HorizontalStackLayout>
+                        <Label Text="Local do Evento: "/>
+                        <Label Text="Casa de Piscina"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!--Data do evento-->
+                <Frame Margin="10">
+                    <Grid ColumnDefinitions="*, *, *"
+                          RowDefinitions="Auto, Auto">
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Inicio:"/>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Text="Término:"/>
+                        <Label Grid.Row="0"
+                               Grid.Column="2"
+                               Text="Dias de eveto:"/>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="12/11/2024"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="13/11/2024"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="2"
+                               Text="1 dia"/>
+
+                    </Grid>
+                </Frame>
+
+                <!--Total-->
+                <Frame Margin="10">
+                    <HorizontalStackLayout>
+                        <Label Text="Valor Total:"/>
+                        <Label Text="R$ 100"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Button Margin="10"
+                        Text="Voltar"
+                        BackgroundColor="Cyan"
+                        Clicked="Button_Clicked"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+        
+
     </VerticalStackLayout>
 </ContentPage>
