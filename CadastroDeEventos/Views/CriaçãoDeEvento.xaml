@@ -13,18 +13,19 @@
         <Label Text="Dados do Evento"
                FontFamily="OdibeeSans"
                FontSize="50"
-               TextColor="Purple"/>
+               TextColor="Indigo"/>
 
         <Frame Padding="10"
-               BackgroundColor="Purple">
+               BackgroundColor="Indigo">
             <VerticalStackLayout>
                 
                 <!--Nome do evento-->
                 <Frame Padding="10"
                        Margin="10">
-                    <VerticalStackLayout>
+                    <VerticalStackLayout Spacing="2">
 
-                        <Label Text="Nome do evento:"/>
+                        <Label Text="Nome do evento:"
+                               TextTransform="Uppercase"/>
                         <Entry x:Name="txt_nome"/>
 
                     </VerticalStackLayout>
@@ -35,16 +36,17 @@
                 <Frame Padding="10"
                        Margin="10">
                     <Grid RowDefinitions="Auto, Auto"
-                         ColumnDefinitions="*, *, 2*">
+                          ColumnDefinitions="*, *, 2*">
 
                         <Label Grid.Row="0"
-                             Grid.Column="0"
-                             Text="Participantes:"/>
+                               Grid.Column="0"
+                               Text="Participantes:"/>
 
                         <Label Grid.Row="0"
-                             Grid.Column="1"
-                             Text="{Binding Value}"
-                             BindingContext="{x:Reference stp_part}"/>
+                               Grid.Column="1"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_part}"
+                               TextColor="Cyan"/>
 
                         <Stepper Grid.Row="0"
                                Grid.Column="2"
@@ -60,9 +62,10 @@
                 <!--Local do evento-->
                 <Frame Padding="10"
                        Margin="10">
-                    <VerticalStackLayout>
+                    <VerticalStackLayout Spacing="2">
 
-                        <Label Text="Local do evento:"/>
+                        <Label Text="Local do evento:"
+                               TextTransform="Uppercase"/>
 
                         <Picker x:Name="pck_local"
                                 Title="Escolha o local do evento"
@@ -80,20 +83,23 @@
                 <!-- Duração do evento-->
                 <Frame Padding="10"
                        Margin="10">
-                    <VerticalStackLayout>
+                    <VerticalStackLayout Spacing="2">
 
-                        <Label Text="Duração do evento"/>
+                        <Label Text="Duração do evento"
+                               TextTransform="Uppercase"/>
 
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Inicio:"/>
                             <DatePicker x:Name="dtpck_inicio"
                                         Format="dd/MM/yyyy"
-                                        DateSelected="dtpck_inicio_DateSelected"/>
+                                        DateSelected="dtpck_inicio_DateSelected"
+                                        TextColor="Cyan"/>
                         </HorizontalStackLayout>
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Término:"/>
                             <DatePicker x:Name="dtpck_termino"
-                                        Format="dd/MM/yyyy"/>
+                                        Format="dd/MM/yyyy"
+                                        TextColor="Cyan"/>
                         </HorizontalStackLayout>
 
                     </VerticalStackLayout>

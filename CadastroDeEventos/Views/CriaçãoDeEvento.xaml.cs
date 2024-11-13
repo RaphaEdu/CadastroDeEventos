@@ -1,3 +1,5 @@
+using CadastroDeEventos.Models;
+
 namespace CadastroDeEventos.Views;
 
 public partial class CriaçãoDeEvento : ContentPage
@@ -19,15 +21,29 @@ public partial class CriaçãoDeEvento : ContentPage
 		dtpck_termino.MaximumDate = dtpck_inicio.Date.AddMonths(6);
 	}
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
 		try
 		{
-			Navigation.PushAsync(new EventoPronto());
+			EventoFinal h = new EventoFinal
+			{
+				local_selecionado = (Local)pck_local.SelectedItem,
+				Nparticipantes = Convert.ToInt32(stp_part.Value),
+				DataInicio = dtpck_inicio.Date,
+				DataTermino = dtpck_termino.Date,
+				NomeEvento = txt_nome.Text,
+			};
+
+
+
+			await Navigation.PushAsync(new EventoPronto()
+			{
+				BindingContext = h,
+			});
 
 		}catch (Exception ex)
 		{
-			DisplayAlert("Ops", ex.Message, "OK");
+			await DisplayAlert("Ops", ex.Message, "OK");
 		}
     }
 

@@ -4,33 +4,39 @@
              x:Class="CadastroDeEventos.Views.EventoPronto"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="Black">
-    <VerticalStackLayout VerticalOptions="CenterAndExpand">
-
-        <Label Text="Nome do Evento"
-               TextColor="Purple"
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        
+        <!--Nome do Evento-->
+        <Label Text="{Binding NomeEvento}"
+               TextColor="Indigo"
                FontFamily="OdibeeSans"
                FontSize="45"
                HorizontalTextAlignment="Center"/>
 
         <Frame Margin="10"
-               BackgroundColor="Purple">
+               BackgroundColor="Indigo">
             <VerticalStackLayout>
 
-                <!--Nome do evento-->
+                <!--Participantes-->
                 <Frame Margin="10">
-                    <HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand"
+                                           Spacing="5">
 
                         <Label Text="Numero de participantes:"/>
-                        <Label Text="10"/>
+                        <Label Text="{Binding Nparticipantes}"
+                               TextColor="Cyan"/>
 
                     </HorizontalStackLayout>
                 </Frame>
 
                 <!--Local do evento-->
-                <Frame Margin="10">
-                    <HorizontalStackLayout>
+                <Frame Margin="10"
+                       Padding="10">
+                    <HorizontalStackLayout Spacing="5"
+                                           HorizontalOptions="CenterAndExpand">
                         <Label Text="Local do Evento: "/>
-                        <Label Text="Casa de Piscina"/>
+                        <Label Text="{Binding local_selecionado.Descricao}"/>
                     </HorizontalStackLayout>
                 </Frame>
 
@@ -51,28 +57,34 @@
 
                         <Label Grid.Row="1"
                                Grid.Column="0"
-                               Text="12/11/2024"/>
+                               Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"
+                               TextColor="Cyan"/>
                         <Label Grid.Row="1"
                                Grid.Column="1"
-                               Text="13/11/2024"/>
+                               Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}"
+                               TextColor="Cyan"/>
                         <Label Grid.Row="1"
                                Grid.Column="2"
-                               Text="1 dia"/>
+                               Text="{Binding Diaria}"
+                               TextColor="Cyan"/>
 
                     </Grid>
                 </Frame>
 
                 <!--Total-->
                 <Frame Margin="10">
-                    <HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand"
+                                           Spacing="8">
                         <Label Text="Valor Total:"/>
-                        <Label Text="R$ 100"/>
+                        <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
+                               TextColor="Cyan"/>
                     </HorizontalStackLayout>
                 </Frame>
 
                 <Button Margin="10"
                         Text="Voltar"
                         BackgroundColor="Cyan"
+                        FontAttributes="Bold"
                         Clicked="Button_Clicked"/>
 
             </VerticalStackLayout>

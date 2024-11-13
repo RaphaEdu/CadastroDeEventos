@@ -4,10 +4,63 @@
              x:Class="CadastroDeEventos.Views.TabelaDePrecos"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="Black">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        <Label Text="Tabela de preços"
+               FontSize="65"
+               FontFamily="OdibeeSans"
+               TextColor="Indigo"/>
+
+        <Frame Margin="10"
+               BackgroundColor="Indigo">
+            <VerticalStackLayout Spacing="10">
+
+                <Frame>
+                    <VerticalStackLayout Spacing="10">
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Salão de Festas Pequeno:"/>
+                            <Label Text="R$ 50,00"
+                                   TextColor="Cyan"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Salão de Festas Médio:"/>
+                            <Label Text="R$ 75,00"
+                                   TextColor="Cyan"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Salão de Festas Grande:"/>
+                            <Label Text="R$ 110,00"
+                                   TextColor="Cyan"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Casa com Piscina SEM Dormitório:"/>
+                            <Label Text="R$ 150,00"
+                                   TextColor="Cyan"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Casa com Piscina, 2 Dormitórios:"/>
+                            <Label Text="R$ 200,00"
+                                   TextColor="Cyan"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Casa com Piscina, 4 Dormitórios:"/>
+                            <Label Text="R$ 270,00"
+                                   TextColor="Cyan"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Button Text="Voltar"
+                        FontAttributes="Bold"
+                        BackgroundColor="Cyan"
+                        Clicked="Button_Clicked"/>
+            </VerticalStackLayout>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>
